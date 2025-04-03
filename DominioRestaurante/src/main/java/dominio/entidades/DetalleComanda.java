@@ -8,13 +8,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  * @author Jesús Osuna 240549
  */
 
 @Entity
-public class DetallesComanda implements Serializable {
+@Table(name = "detalleComanda")
+public class DetalleComanda implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,29 +34,37 @@ public class DetallesComanda implements Serializable {
     @Column (name = "importeTotal")
     private Long importeTotal;
     
+    @ManyToOne 
+    @JoinColumn(name = "id_producto", nullable = false)
+    private Producto producto;
+    
     @ManyToOne
     @JoinColumn(name = "id_comanda", nullable = true)
     private Comanda comanda;
 
-    public DetallesComanda() {
+    public DetalleComanda() {
         
     }
 
-    public DetallesComanda(Integer cantidad, String notas, Long precioUnitario, Long importeTotal) {
+    public DetalleComanda(Integer cantidad, String notas, Long precioUnitario, Long importeTotal, Producto producto, Comanda comanda) {
         this.cantidad = cantidad;
         this.notas = notas;
         this.precioUnitario = precioUnitario;
         this.importeTotal = importeTotal;
+        this.producto = producto;
+        this.comanda = comanda;
     }
 
-    public DetallesComanda(Long id, Integer cantidad, String notas, Long precioUnitario, Long importeTotal) {
+    public DetalleComanda(Long id, Integer cantidad, String notas, Long precioUnitario, Long importeTotal, Producto producto, Comanda comanda) {
         this.id = id;
         this.cantidad = cantidad;
         this.notas = notas;
         this.precioUnitario = precioUnitario;
         this.importeTotal = importeTotal;
+        this.producto = producto;
+        this.comanda = comanda;
     }
-    
+
     public Long getId() {
         return id;
     }
@@ -95,6 +105,23 @@ public class DetallesComanda implements Serializable {
         this.importeTotal = importeTotal;
     }
 
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
+
+    public Comanda getComanda() {
+        return comanda;
+    }
+
+    public void setComanda(Comanda comanda) {
+        this.comanda = comanda;
+    }
+
+    
     @Override
     public int hashCode() {
         int hash = 0;
@@ -105,10 +132,10 @@ public class DetallesComanda implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof DetallesComanda)) {
+        if (!(object instanceof DetalleComanda)) {
             return false;
         }
-        DetallesComanda other = (DetallesComanda) object;
+        DetalleComanda other = (DetalleComanda) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -117,7 +144,7 @@ public class DetallesComanda implements Serializable {
 
     @Override
     public String toString() {
-        return "DetallesComanda{" + "id=" + id + ", cantidad=" + cantidad + ", notas=" + notas + ", precioUnitario=" + precioUnitario + ", importeTotal=" + importeTotal + ", comanda=" + comanda + '}';
+        return "DetalleComanda{" + "id=" + id + ", cantidad=" + cantidad + ", notas=" + notas + ", precioUnitario=" + precioUnitario + ", importeTotal=" + importeTotal + ", producto=" + producto + ", comanda=" + comanda + '}';
     }
 
 }

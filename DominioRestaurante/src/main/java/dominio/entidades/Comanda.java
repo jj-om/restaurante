@@ -16,6 +16,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -24,6 +25,7 @@ import javax.persistence.TemporalType;
  */
 
 @Entity
+@Table(name = "comandas")
 public class Comanda implements Serializable {
 
     @Id
@@ -41,6 +43,9 @@ public class Comanda implements Serializable {
     @Enumerated(value = EnumType.STRING)
     private EstadoComanda estado;
     
+    @Column (name = "totalVenta")
+    private Long totalVenta;
+    
     @ManyToOne
     @JoinColumn(name = "id_mesa", nullable = true)
     private Mesa mesa;
@@ -50,27 +55,29 @@ public class Comanda implements Serializable {
     private Cliente cliente;
     
     @OneToMany(mappedBy = "comanda", cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
-    private List<DetallesComanda> detallesComanda = new ArrayList<>();
+    private List<DetalleComanda> detallesComanda = new ArrayList<>();
 
     public Comanda() {
         
     }
 
-    public Comanda(String folio, Date fechaHora, EstadoComanda estado, Mesa mesa, Cliente cliente) {
+    public Comanda(String folio, Date fechaHora, EstadoComanda estado, Mesa mesa, Cliente cliente, Long totalVenta) {
         this.folio = folio;
         this.fechaHora = fechaHora;
         this.estado = estado;
         this.mesa = mesa;
         this.cliente = cliente;
+        this.totalVenta = totalVenta;
     }
 
-    public Comanda(Long id, String folio, Date fechaHora, EstadoComanda estado, Mesa mesa, Cliente cliente) {
+    public Comanda(Long id, String folio, Date fechaHora, EstadoComanda estado, Mesa mesa, Cliente cliente, Long totalVenta) {
         this.id = id;
         this.folio = folio;
         this.fechaHora = fechaHora;
         this.estado = estado;
         this.mesa = mesa;
         this.cliente = cliente;
+        this.totalVenta = totalVenta;
     }
 
     public Long getId() {
@@ -121,11 +128,19 @@ public class Comanda implements Serializable {
         this.cliente = cliente;
     }
 
-    public List<DetallesComanda> getDetallesComanda() {
+    public Long getTotalVenta() {
+        return totalVenta;
+    }
+
+    public void setTotalVenta(Long totalVenta) {
+        this.totalVenta = totalVenta;
+    }
+
+    public List<DetalleComanda> getDetallesComanda() {
         return detallesComanda;
     }
 
-    public void setDetallesComandas(List<DetallesComanda> detallesComanda) {
+    public void setDetallesComandas(List<DetalleComanda> detallesComanda) {
         this.detallesComanda = detallesComanda;
     }
 
@@ -151,7 +166,7 @@ public class Comanda implements Serializable {
 
     @Override
     public String toString() {
-        return "Comanda{" + "id=" + id + ", folio=" + folio + ", fechaHora=" + fechaHora + ", estado=" + estado + ", mesa=" + mesa + ", cliente=" + cliente + ", detallesComanda=" + detallesComanda + '}';
+        return "Comanda{" + "id=" + id + ", folio=" + folio + ", fechaHora=" + fechaHora + ", estado=" + estado + ", totalVenta=" + totalVenta + ", mesa=" + mesa + ", cliente=" + cliente + ", detallesComanda=" + detallesComanda + '}';
     }
 
 }

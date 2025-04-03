@@ -1,5 +1,6 @@
 C:\Users\dell\Documents\NetBeansProjects\restaurante\DominioRestaurante\src\main\java\dominio\enums\EstadoComanda.java
 C:\Users\dell\Documents\NetBeansProjects\restaurante\DominioRestaurante\src\main\java\dominio\enums\UnidadMedicion.java
+C:\Users\dell\Documents\NetBeansProjects\restaurante\DominioRestaurante\src\main\java\dominio\entidades\DetalleComanda.java
 C:\Users\dell\Documents\NetBeansProjects\restaurante\DominioRestaurante\src\main\java\dominio\entidades\Mesa.java
 C:\Users\dell\Documents\NetBeansProjects\restaurante\DominioRestaurante\src\main\java\dominio\entidades\Comanda.java
 C:\Users\dell\Documents\NetBeansProjects\restaurante\DominioRestaurante\src\main\java\dominio\enums\TipoCliente.java
@@ -8,5 +9,4 @@ C:\Users\dell\Documents\NetBeansProjects\restaurante\DominioRestaurante\src\main
 C:\Users\dell\Documents\NetBeansProjects\restaurante\DominioRestaurante\src\main\java\dominio\entidades\Producto.java
 C:\Users\dell\Documents\NetBeansProjects\restaurante\DominioRestaurante\src\main\java\dominio\enums\TipoProducto.java
 C:\Users\dell\Documents\NetBeansProjects\restaurante\DominioRestaurante\src\main\java\dominio\entidades\IngredientesProductos.java
-C:\Users\dell\Documents\NetBeansProjects\restaurante\DominioRestaurante\src\main\java\dominio\entidades\DetallesComanda.java
 C:\Users\dell\Documents\NetBeansProjects\restaurante\DominioRestaurante\src\main\java\dominio\entidades\Cliente.java
