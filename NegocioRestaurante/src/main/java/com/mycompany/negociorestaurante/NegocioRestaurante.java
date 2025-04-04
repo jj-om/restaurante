@@ -22,7 +22,7 @@ public class NegocioRestaurante {
         String nombreP = "Sandwich";
         
         try {
-            productoBO.deshabilitarProducto(nombreP);
+            productoBO.activarProducto(nombreP);
             System.out.println("Deshabilitado con exito desde negocio :)");
         } catch (Exception e) {
         }

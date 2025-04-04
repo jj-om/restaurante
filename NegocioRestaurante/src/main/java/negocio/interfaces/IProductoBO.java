@@ -20,6 +20,6 @@ public interface IProductoBO {
     public List<ProductoDTO> buscarProductosPorNombre(String nombre) throws NegocioException;
     public void deshabilitarProducto (String nombre) throws NegocioException;
     public Producto buscarPorNombre(String nombre) throws NegocioException;
-
+    public void activarProducto (String nombre) throws NegocioException;
     
 }

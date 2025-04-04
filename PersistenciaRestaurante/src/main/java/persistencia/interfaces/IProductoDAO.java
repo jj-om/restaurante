@@ -19,4 +19,5 @@ public interface IProductoDAO {
      public List<Producto> buscarPorNombreParcial (String nombre) throws PersistenciaException;
      public Producto buscarPorNombre(String nombre) throws PersistenciaException;
      public void deshabilitarProducto (String nombre) throws PersistenciaException;
+     public void activarProducto (String nombre) throws PersistenciaException;
 }

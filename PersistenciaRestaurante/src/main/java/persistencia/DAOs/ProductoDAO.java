@@ -120,5 +120,23 @@ public class ProductoDAO implements IProductoDAO{
     }
     }
     
+    public void activarProducto (String nombre) throws PersistenciaException{
+        EntityManager em = Conexion.crearConexion();
+        try {
+            em.getTransaction().begin();
+            Producto producto = buscarPorNombre(nombre);
+            
+            if (producto == null) {
+                    throw new PersistenciaException ("No se encontro el producto para activar");
+                }
+            producto.setActivo(true);
+            em.merge(producto);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+            throw new PersistenciaException("Error al activar el producto: "+ e.getMessage(), e);
+        }
     
+    
+    }
 }

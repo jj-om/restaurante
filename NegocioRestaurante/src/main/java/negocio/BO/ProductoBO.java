@@ -105,8 +105,22 @@ public class ProductoBO {
             ProductoDAO.deshabilitarProducto(nombre);
             System.out.println("Producto deshabilitado correctamente: "+ nombre);
         }catch (PersistenciaException e) {
-                throw new NegocioException("Error al buscar productos por nombre", e);
+                throw new NegocioException("Error al deshabilitar producto", e);
          }
 
 }
+    public void activarProducto (String nombre) throws NegocioException{
+        try {
+            Producto producto = ProductoDAO.buscarPorNombre(nombre);
+            if (producto==null) {
+                throw new NegocioException ("El producto con nombre: " + nombre + "no existe.");
+            }
+            ProductoDAO.activarProducto(nombre);
+            System.out.println("Producto habilitado correctamente: "+ nombre);
+        } catch (Exception e) {
+            throw new NegocioException("Error al habilitar producto", e);
+        }
+    
+    
+    }
 }

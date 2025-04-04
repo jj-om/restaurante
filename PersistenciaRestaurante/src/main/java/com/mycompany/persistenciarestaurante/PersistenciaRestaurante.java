@@ -37,7 +37,7 @@ public class PersistenciaRestaurante {
         try{
             //Producto productoRegistrar = ProductoDAO.getInstanceDAO().registrarProducto(p);
             
-            ProductoDAO.getInstanceDAO().deshabilitarProducto(nombreProducto);
+            ProductoDAO.getInstanceDAO().activarProducto(nombreProducto);
             System.out.println("Producto deshabilitado correctamente");
             //Cliente cl = ClienteDAO.getInstanceDAO().guardar(c);
             
