@@ -1,5 +1,7 @@
-/Users/alexnieblas/Documents/develop/restaurante/PersistenciaRestaurante/src/main/java/persistencia/conexion/Conexion.java
-/Users/alexnieblas/Documents/develop/restaurante/PersistenciaRestaurante/src/main/java/persistencia/DAOs/ClienteDAO.java
-/Users/alexnieblas/Documents/develop/restaurante/PersistenciaRestaurante/src/main/java/persistencia/interfaces/IClienteDAO.java
-/Users/alexnieblas/Documents/develop/restaurante/PersistenciaRestaurante/src/main/java/com/mycompany/persistenciarestaurante/PersistenciaRestaurante.java
-/Users/alexnieblas/Documents/develop/restaurante/PersistenciaRestaurante/src/main/java/persistencia/exception/PersistenciaException.java
+C:\Users\Gotek'Sam\Documents\NetBeansProjects\restaurante\PersistenciaRestaurante\src\main\java\persistencia\DAOs\ClienteDAO.java
+C:\Users\Gotek'Sam\Documents\NetBeansProjects\restaurante\PersistenciaRestaurante\src\main\java\persistencia\exception\PersistenciaException.java
+C:\Users\Gotek'Sam\Documents\NetBeansProjects\restaurante\PersistenciaRestaurante\src\main\java\com\mycompany\persistenciarestaurante\PersistenciaRestaurante.java
+C:\Users\Gotek'Sam\Documents\NetBeansProjects\restaurante\PersistenciaRestaurante\src\main\java\persistencia\conexion\Conexion.java
+C:\Users\Gotek'Sam\Documents\NetBeansProjects\restaurante\PersistenciaRestaurante\src\main\java\persistencia\interfaces\IProductoDAO.java
+C:\Users\Gotek'Sam\Documents\NetBeansProjects\restaurante\PersistenciaRestaurante\src\main\java\persistencia\DAOs\ProductoDAO.java
+C:\Users\Gotek'Sam\Documents\NetBeansProjects\restaurante\PersistenciaRestaurante\src\main\java\persistencia\interfaces\IClienteDAO.java

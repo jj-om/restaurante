@@ -5,6 +5,7 @@
 package persistencia.interfaces;
 
 import dominio.entidades.Producto;
+import java.util.List;
 import persistencia.exception.PersistenciaException;
 
 /**
@@ -15,4 +16,5 @@ public interface IProductoDAO {
    
     public Producto registrarProducto (Producto producto) throws PersistenciaException;
     public Producto actualizarProducto (Producto producto) throws PersistenciaException;
+     public List<Producto> buscarPorNombreParcial (String nombre) throws PersistenciaException;
 }

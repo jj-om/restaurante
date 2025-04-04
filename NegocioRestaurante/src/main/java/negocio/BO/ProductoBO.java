@@ -7,6 +7,8 @@ package negocio.BO;
 import com.google.protobuf.Message;
 import dominio.DTOs.ProductoDTO;
 import dominio.entidades.Producto;
+import java.util.ArrayList;
+import java.util.List;
 import negocio.exception.NegocioException;
 import negocio.mappers.ProductoMapper;
 import persistencia.exception.PersistenciaException;
@@ -80,7 +82,19 @@ public class ProductoBO {
         } catch (Exception e) {
         }throw new NegocioException ("No se pudo actualizar el producto");
     }
-    
-    
-    
+    public List<ProductoDTO> buscarProductosPorNombre(String nombre) throws NegocioException {
+        
+        try {
+            List<Producto> productos = ProductoDAO.buscarPorNombreParcial(nombre);
+        
+            List<ProductoDTO> productosDTO = new ArrayList<>();
+                for (Producto producto : productos) {
+            productosDTO.add(ProductoMapper.toDTO(producto));
+            }
+            return productosDTO;
+            } catch (PersistenciaException e) {
+                throw new NegocioException("Error al buscar productos por nombre", e);
+         }
+}
+
 }

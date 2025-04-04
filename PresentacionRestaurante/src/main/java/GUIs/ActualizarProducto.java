@@ -40,7 +40,7 @@ public class ActualizarProducto extends javax.swing.JFrame {
 
         btnRegistrar.setBackground(new java.awt.Color(27, 61, 174));
         btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegistrar.setText("Registrar");
+        btnRegistrar.setText("Actualizar");
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistrarActionPerformed(evt);

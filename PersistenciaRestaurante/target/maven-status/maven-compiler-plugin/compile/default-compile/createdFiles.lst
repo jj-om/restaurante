@@ -1,5 +1,7 @@
-persistencia/conexion/Conexion.class
-persistencia/exception/PersistenciaException.class
-persistencia/DAOs/ClienteDAO.class
-persistencia/interfaces/IClienteDAO.class
-com/mycompany/persistenciarestaurante/PersistenciaRestaurante.class
+persistencia\interfaces\IProductoDAO.class
+persistencia\interfaces\IClienteDAO.class
+persistencia\exception\PersistenciaException.class
+com\mycompany\persistenciarestaurante\PersistenciaRestaurante.class
+persistencia\DAOs\ClienteDAO.class
+persistencia\DAOs\ProductoDAO.class
+persistencia\conexion\Conexion.class

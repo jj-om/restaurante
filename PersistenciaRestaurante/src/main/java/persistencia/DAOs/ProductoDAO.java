@@ -5,6 +5,7 @@
 package persistencia.DAOs;
 
 import dominio.entidades.Producto;
+import java.util.List;
 import javax.persistence.EntityManager;
 import persistencia.conexion.Conexion;
 import persistencia.exception.PersistenciaException;
@@ -68,6 +69,21 @@ public class ProductoDAO implements IProductoDAO{
             em.close();
         }
     }
+    public List<Producto> buscarPorNombreParcial(String nombre) throws PersistenciaException {
+        EntityManager em = Conexion.crearConexion();
+        try {
+            em.getTransaction().begin();
+        return em.createQuery(
+                "SELECT p FROM Producto p WHERE LOWER(p.nombre) LIKE LOWER(:nombre)",
+                Producto.class)
+            .setParameter("nombre", "%" + nombre + "%")
+            .getResultList();
+         } catch (Exception e) {
+             em.getTransaction().rollback();
+            throw new PersistenciaException("No se busco el producto correctamente: " + e.getMessage(), e);
+    }
+}
+
     
     
 }

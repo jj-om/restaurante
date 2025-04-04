@@ -1,0 +1,8 @@
+negocio\exception\NegocioException.class
+negocio\interfaces\IProductoBO.class
+negocio\interfaces\IClienteBO.class
+negocio\BO\ProductoBO.class
+negocio\mappers\ProductoMapper.class
+negocio\BO\ClienteBO.class
+com\mycompany\negociorestaurante\NegocioRestaurante.class
+negocio\mappers\ClienteMapper.class

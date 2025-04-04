@@ -3,10 +3,13 @@ dominio\entidades\IngredientesProductos.class
 dominio\entidades\Comanda.class
 dominio\entidades\ClienteFrecuente.class
 dominio\entidades\Mesa.class
+dominio\DTOs\ClienteDTO.class
 dominio\enums\UnidadMedicion.class
 dominio\enums\TipoProducto.class
 dominio\entidades\Ingrediente.class
 dominio\enums\TipoCliente.class
+dominio\DTOs\ClienteFrecuenteDTO.class
 dominio\enums\EstadoComanda.class
 dominio\entidades\Producto.class
+dominio\DTOs\ProductoDTO.class
 dominio\entidades\Cliente.class
