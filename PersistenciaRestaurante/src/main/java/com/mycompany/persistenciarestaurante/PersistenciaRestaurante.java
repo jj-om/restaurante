@@ -29,28 +29,21 @@ public class PersistenciaRestaurante {
         
         //Registrar un cliente y un producto
         
-        //Producto p = new Producto("Sandwich", 204L, TipoProducto.platillo);
+        Producto p = new Producto("Sandwich", 200L, TipoProducto.platillo);
         //Cliente c = new Cliente("Alex Adrian", "Nieblas", "Moreno", "6442253326", "alex@gmail.com", TipoCliente.frecuente);
         
         //buscar producto
-        String nombreProducto = "sand";
+        String nombreProducto = "Sandwich";
         try{
-           
-            List<Producto> productosEncontrados = ProductoDAO.getInstanceDAO().buscarPorNombreParcial(nombreProducto);
+            //Producto productoRegistrar = ProductoDAO.getInstanceDAO().registrarProducto(p);
+            
+            ProductoDAO.getInstanceDAO().deshabilitarProducto(nombreProducto);
+            System.out.println("Producto deshabilitado correctamente");
+            //Cliente cl = ClienteDAO.getInstanceDAO().guardar(c);
+            
           //  Cliente cl = ClienteDAO.getInstanceDAO().guardar(c);
-            if (productosEncontrados.isEmpty()) {
-                System.out.println("No se encontraron coincidencias");
-            }else{
-                for (Producto producto : productosEncontrados) {
-                    System.out.println("nombre:"+ producto.getNombre());
-                    System.out.println("precio:" + producto.getPrecio());
-                    System.out.println("tipo:"+ producto.getTipoProducto());
-                }
-            
-            }
-            
             //System.out.println(cl.toString());
-            System.out.println(productosEncontrados.toString());
+           // System.out.println(productoDesactivar.toString());
         }catch (PersistenciaException pe){
             pe.printStackTrace();
         }

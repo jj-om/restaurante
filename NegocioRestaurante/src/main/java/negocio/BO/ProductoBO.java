@@ -21,7 +21,7 @@ import persistencia.interfaces.IProductoDAO;
 public class ProductoBO {
     
        /**
-     * Instancia del DAO que maneja la persistencia de videojuegos.
+     * Instancia del DAO que maneja la persistencia de producto.
      */
     private IProductoDAO ProductoDAO;
 
@@ -96,5 +96,17 @@ public class ProductoBO {
                 throw new NegocioException("Error al buscar productos por nombre", e);
          }
 }
+    public void deshabilitarProducto (String nombre) throws NegocioException{
+        try {
+            Producto producto = ProductoDAO.buscarPorNombre(nombre);
+            if (producto == null) {
+                throw new NegocioException("El producto con nombre: "+ nombre + "no existe.");
+            }
+            ProductoDAO.deshabilitarProducto(nombre);
+            System.out.println("Producto deshabilitado correctamente: "+ nombre);
+        }catch (PersistenciaException e) {
+                throw new NegocioException("Error al buscar productos por nombre", e);
+         }
 
+}
 }

@@ -17,4 +17,6 @@ public interface IProductoDAO {
     public Producto registrarProducto (Producto producto) throws PersistenciaException;
     public Producto actualizarProducto (Producto producto) throws PersistenciaException;
      public List<Producto> buscarPorNombreParcial (String nombre) throws PersistenciaException;
+     public Producto buscarPorNombre(String nombre) throws PersistenciaException;
+     public void deshabilitarProducto (String nombre) throws PersistenciaException;
 }

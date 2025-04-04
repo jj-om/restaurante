@@ -4,6 +4,11 @@
 
 package com.mycompany.negociorestaurante;
 
+import dominio.entidades.Producto;
+import negocio.BO.ProductoBO;
+import persistencia.DAOs.ProductoDAO;
+import persistencia.interfaces.IProductoDAO;
+
 /**
  *
  * @author Jesús Osuna 240549
@@ -11,9 +16,15 @@ package com.mycompany.negociorestaurante;
 public class NegocioRestaurante {
 
     public static void main(String[] args) {
+        //prueba de si funciona en capa negocio el desactivar un producto
+        IProductoDAO productoDAO = ProductoDAO.getInstanceDAO();
+        ProductoBO productoBO = new ProductoBO (productoDAO);
+        String nombreP = "Sandwich";
         
-        
-        
-        
+        try {
+            productoBO.deshabilitarProducto(nombreP);
+            System.out.println("Deshabilitado con exito desde negocio :)");
+        } catch (Exception e) {
+        }
     }
 }

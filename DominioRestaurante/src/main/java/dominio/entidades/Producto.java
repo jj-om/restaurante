@@ -35,6 +35,9 @@ public class Producto implements Serializable {
     @Column(name = "tipoProducto", nullable = false)
     @Enumerated(value = EnumType.STRING)
     private TipoProducto tipoProducto;
+    
+    @Column (nullable = false)
+    private boolean activo = true;
 
     @OneToMany(mappedBy = "producto", cascade = {CascadeType.REMOVE, CascadeType.PERSIST, CascadeType.MERGE})
     private List<IngredientesProductos> ingredientesProductos = new ArrayList<>();
@@ -92,10 +95,18 @@ public class Producto implements Serializable {
         return ingredientesProductos;
     }
 
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
+    
     public void setIngredientesProductos(List<IngredientesProductos> ingredientesProductos) {
         this.ingredientesProductos = ingredientesProductos;
     }
-
+    
     @Override
     public int hashCode() {
         int hash = 0;
