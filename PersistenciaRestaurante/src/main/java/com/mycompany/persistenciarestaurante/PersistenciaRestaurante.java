@@ -4,8 +4,12 @@
 
 package com.mycompany.persistenciarestaurante;
 
+import dominio.entidades.Cliente;
+import dominio.enums.TipoCliente;
 import javax.persistence.EntityManager;
+import persistencia.DAOs.ClienteDAO;
 import persistencia.conexion.Conexion;
+import persistencia.exception.PersistenciaException;
 
 /**
  *
@@ -18,5 +22,14 @@ public class PersistenciaRestaurante {
         
         em.getTransaction().begin();
         em.getTransaction().commit();
+        
+        //Registrar un cliente
+        Cliente c = new Cliente("Alex Adrian", "Nieblas", "Moreno", "6442253326", "alex@gmail.com", TipoCliente.frecuente);
+        try{
+            Cliente cl = ClienteDAO.getInstanceDAO().guardar(c);
+            System.out.println(cl.toString());
+        }catch (PersistenciaException pe){
+            pe.printStackTrace();
+        }
     }
 }
