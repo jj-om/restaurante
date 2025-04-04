@@ -51,6 +51,23 @@ public class ProductoDAO implements IProductoDAO{
             em.close();
         }
     }
+    public Producto actualizarProducto (Producto producto) throws PersistenciaException{
+        EntityManager em = Conexion.crearConexion();
+        try {
+            em.getTransaction().begin();
+            em.merge(producto);
+            em.getTransaction().commit();
+            if (producto.getId() == null) {
+                throw new PersistenciaException("Error: No se actualizo el producto correctamente.");
+            }
+            return producto;
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+            throw new PersistenciaException("No se pudo registrar el producto: " + e.getMessage());
+        } finally {
+            em.close();
+        }
+    }
     
     
 }

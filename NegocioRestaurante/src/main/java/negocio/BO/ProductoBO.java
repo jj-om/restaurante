@@ -4,6 +4,7 @@
  */
 package negocio.BO;
 
+import com.google.protobuf.Message;
 import dominio.DTOs.ProductoDTO;
 import dominio.entidades.Producto;
 import negocio.exception.NegocioException;
@@ -56,4 +57,30 @@ public class ProductoBO {
         }
 
     }
+    
+    public ProductoDTO actualizarProducto (ProductoDTO producto) throws NegocioException{
+    
+    
+        if (producto.getPrecio() == null || producto.getPrecio()<= 0 ){
+            throw new NegocioException("El precio debe ser mayor a cero y no puede quedar vacio");
+        }
+        if (producto.getTipoProducto() == null) {
+            throw new NegocioException("Debe seleccionar una categoría para el producto");
+        }
+        if (producto.getIngredientesProducto() == null) {
+            throw new NegocioException ("No puedes actualizar productos sin ingredientes");
+        }
+        Producto productoActualizar = ProductoMapper.toEntity(producto);
+        try {
+            Producto productoR = ProductoDAO.actualizarProducto(productoActualizar);
+            if (productoR.getId()== null) {
+                    throw new NegocioException ("No existe un producto con este id");
+                }
+            return ProductoMapper.toDTO(productoR);
+        } catch (Exception e) {
+        }throw new NegocioException ("No se pudo actualizar el producto");
+    }
+    
+    
+    
 }

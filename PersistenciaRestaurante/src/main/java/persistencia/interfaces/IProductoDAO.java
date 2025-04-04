@@ -14,4 +14,5 @@ import persistencia.exception.PersistenciaException;
 public interface IProductoDAO {
    
     public Producto registrarProducto (Producto producto) throws PersistenciaException;
+    public Producto actualizarProducto (Producto producto) throws PersistenciaException;
 }
