@@ -4,14 +4,10 @@
  */
 package negocio.interfaces;
 
-import dominio.DTOs.ClienteDTO;
-import negocio.exception.NegocioException;
-
 /**
  *
- * @author alexnieblas
+ * @author Gael
  */
-public interface IClienteBO {
-        public ClienteDTO registrarCliente(ClienteDTO cliente) throws NegocioException;
-
+public interface IProductoBO {
+    
 }

@@ -33,7 +33,7 @@ public class ClienteBO implements IClienteBO {
     }
 
     @Override
-    public ClienteDTO registrarVideojuego(ClienteDTO cliente) throws NegocioException {
+    public ClienteDTO registrarCliente(ClienteDTO cliente) throws NegocioException {
         if (cliente.getNombre() == null || cliente.getNombre().trim().isEmpty()) {
             throw new NegocioException("El nombre no puede estar vacío ni ser nulo.");
         }
