@@ -4,7 +4,9 @@
  */
 package dominio.DTOs;
 
+import dominio.entidades.IngredientesProductos;
 import dominio.enums.TipoProducto;
+import java.util.ArrayList;
 
 /**
  *
@@ -15,15 +17,26 @@ public class ProductoDTO {
     private String nombre;
     private Long precio;
     private TipoProducto tipoProducto;
+    private ArrayList<IngredientesProductos> ingredientesProducto;
 
     public ProductoDTO() {
     }
 
-    public ProductoDTO(String nombre, Long precio, TipoProducto tipoProducto) {
+    public ProductoDTO(String nombre, Long precio, TipoProducto tipoProducto, ArrayList<IngredientesProductos> ingredientesProducto) {
         this.nombre = nombre;
         this.precio = precio;
         this.tipoProducto = tipoProducto;
+        this.ingredientesProducto = ingredientesProducto;
     }
+
+    public ArrayList<IngredientesProductos> getIngredientesProducto() {
+        return ingredientesProducto;
+    }
+
+    public void setIngredientesProducto(ArrayList<IngredientesProductos> ingredientesProducto) {
+        this.ingredientesProducto = ingredientesProducto;
+    }
+
 
     public String getNombre() {
         return nombre;

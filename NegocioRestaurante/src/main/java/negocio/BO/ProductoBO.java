@@ -30,14 +30,18 @@ public class ProductoBO {
       
     
         if (producto.getNombre() == null || producto.getNombre().trim().isEmpty()) {
-            throw new IllegalArgumentException("El nombre no puede estar vacío ni ser nulo.");
+            throw new NegocioException("El nombre no puede estar vacío ni ser nulo.");
         }
         if (producto.getPrecio() <= 0) {
-            throw new IllegalArgumentException("El precio debe ser mayor a 0.");
+            throw new NegocioException("El precio debe ser mayor a 0.");
         }
         if (producto.getTipoProducto() == null) {
-            throw new IllegalArgumentException("El tipo de producto no puede ser nulo.");
+            throw new NegocioException("El tipo de producto no puede ser nulo.");
         }
+        if (producto.getIngredientesProducto() == null) {
+            throw new NegocioException ("No se puede registrar un producto sin ingredientes.");
+        }
+        
         Producto productoRegistrar = ProductoMapper.toEntity(producto);
         
         try {

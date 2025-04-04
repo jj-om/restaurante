@@ -6,6 +6,7 @@ package negocio.mappers;
 
 import dominio.DTOs.ProductoDTO;
 import dominio.entidades.Producto;
+import java.util.ArrayList;
 
 /**
  *
@@ -23,7 +24,8 @@ public class ProductoMapper {
         return new ProductoDTO(
                 producto.getNombre(),
                 producto.getPrecio(),
-                producto.getTipoProducto()
+                producto.getTipoProducto(),
+                new ArrayList<>(producto.getIngredientesProductos())
         );
     }
     
@@ -38,6 +40,7 @@ public class ProductoMapper {
         producto.setNombre(productoDTO.getNombre());
         producto.setPrecio(productoDTO.getPrecio());
         producto.setTipoProducto(productoDTO.getTipoProducto());
+        producto.setIngredientesProductos(productoDTO.getIngredientesProducto());
         return producto;
     }
 }
