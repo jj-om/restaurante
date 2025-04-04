@@ -6,7 +6,6 @@ import dominio.enums.TipoCliente;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -17,12 +16,14 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  * @author Jesús Osuna 240549
  */
 
 @Entity
+@Table(name = "clientes")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Cliente implements Serializable {
 
@@ -49,7 +50,7 @@ public class Cliente implements Serializable {
     @Enumerated(value = EnumType.STRING)
     private TipoCliente tipo;
     
-    @OneToMany(mappedBy = "cliente", cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
+    @OneToMany(mappedBy = "cliente")
     private List<Comanda> comandas = new ArrayList<>();
 
     public Cliente() {

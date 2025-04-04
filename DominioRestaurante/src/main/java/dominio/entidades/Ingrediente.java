@@ -2,9 +2,6 @@ package dominio.entidades;
 
 import dominio.enums.UnidadMedicion;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -12,13 +9,14 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  * @author Jesús Osuna 240549
  */
 
 @Entity
+@Table(name = "ingredientes")
 public class Ingrediente implements Serializable {
 
     @Id
@@ -34,9 +32,6 @@ public class Ingrediente implements Serializable {
     
     @Column (name = "stock")
     private Integer stock;
-    
-    @OneToMany(mappedBy = "ingrediente", cascade = {CascadeType.REMOVE, CascadeType.PERSIST, CascadeType.MERGE})
-    private List<IngredientesProductos> ingredientesProductos = new ArrayList<>();
 
     public Ingrediente() {
         this.stock = 0;
@@ -87,13 +82,6 @@ public class Ingrediente implements Serializable {
         this.stock = stock;
     }
 
-    public List<IngredientesProductos> getIngredientesProductos() {
-        return ingredientesProductos;
-    }
-
-    public void setIngredientesProductos(List<IngredientesProductos> ingredientesProductos) {
-        this.ingredientesProductos = ingredientesProductos;
-    }
 
     @Override
     public int hashCode() {
@@ -117,7 +105,7 @@ public class Ingrediente implements Serializable {
 
     @Override
     public String toString() {
-        return "Ingrediente{" + "id=" + id + ", nombre=" + nombre + ", unidadMedicion=" + unidadMedicion + ", stock=" + stock + ", ingredientesProductos=" + ingredientesProductos + '}';
+        return "Ingrediente{" + "id=" + id + ", nombre=" + nombre + ", unidadMedicion=" + unidadMedicion + ", stock=" + stock + '}';
     }
     
 }

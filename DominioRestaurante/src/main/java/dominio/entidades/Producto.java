@@ -13,11 +13,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  * @author Jesús Osuna 240549
  */
 @Entity
+@Table(name = "productos")
 public class Producto implements Serializable {
 
     @Id

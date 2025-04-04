@@ -16,7 +16,7 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name = "ingredientes_productos")
+@Table(name = "ingredientesProductos")
 public class IngredientesProductos implements Serializable {
 
     @Id

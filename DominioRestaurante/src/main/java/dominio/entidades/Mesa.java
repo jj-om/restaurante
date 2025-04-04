@@ -1,21 +1,19 @@
 package dominio.entidades;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  * @author Jesús Osuna 240549
  */
 
 @Entity
+@Table(name = "mesas")
 public class Mesa implements Serializable {
 
     @Id
@@ -24,9 +22,6 @@ public class Mesa implements Serializable {
     
     @Column(name = "numero")
     private Integer numero;
-    
-    @OneToMany(mappedBy = "mesa", cascade = {CascadeType.REMOVE, CascadeType.PERSIST, CascadeType.MERGE})
-    private List<Comanda> comandas = new ArrayList<>();
 
     public Mesa() {
         
@@ -56,14 +51,6 @@ public class Mesa implements Serializable {
     public void setNumero(Integer numero) {
         this.numero = numero;
     }
-
-    public List<Comanda> getComandas() {
-        return comandas;
-    }
-
-    public void setComandas(List<Comanda> comandas) {
-        this.comandas = comandas;
-    }
     
     @Override
     public int hashCode() {
@@ -87,7 +74,7 @@ public class Mesa implements Serializable {
 
     @Override
     public String toString() {
-        return "Mesa{" + "id=" + id + ", numero=" + numero + ", comandas=" + comandas + '}';
+        return "Mesa{" + "id=" + id + ", numero=" + numero + '}';
     }
 
 }
