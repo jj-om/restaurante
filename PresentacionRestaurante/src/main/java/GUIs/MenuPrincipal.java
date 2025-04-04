@@ -28,7 +28,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnModuloProductos = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
@@ -47,12 +47,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(27, 61, 174));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Productos");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnModuloProductos.setBackground(new java.awt.Color(27, 61, 174));
+        btnModuloProductos.setForeground(new java.awt.Color(255, 255, 255));
+        btnModuloProductos.setText("Productos");
+        btnModuloProductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnModuloProductosActionPerformed(evt);
             }
         });
 
@@ -100,7 +100,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addGap(123, 123, 123)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jButton1)
-                    .addComponent(jButton2)
+                    .addComponent(btnModuloProductos)
                     .addComponent(jButton3)
                     .addComponent(jButton4)
                     .addComponent(jButton5)
@@ -119,7 +119,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2)
+                .addComponent(btnModuloProductos)
                 .addGap(18, 18, 18)
                 .addComponent(jButton3)
                 .addGap(18, 18, 18)
@@ -138,9 +138,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnModuloProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModuloProductosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        BuscadorProductos buscador = new BuscadorProductos();
+        this.dispose();
+        buscador.setVisible(true);
+    }//GEN-LAST:event_btnModuloProductosActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
@@ -196,8 +199,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnModuloProductos;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;

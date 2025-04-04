@@ -4,10 +4,16 @@
  */
 package negocio.interfaces;
 
+import dominio.DTOs.ProductoDTO;
+import negocio.exception.NegocioException;
+
 /**
  *
  * @author Gael
  */
 public interface IProductoBO {
+    
+    public ProductoDTO registrarProducto (ProductoDTO producto) throws NegocioException;
+    public ProductoDTO actualizarProducto (ProductoDTO producto) throws NegocioException;
     
 }
