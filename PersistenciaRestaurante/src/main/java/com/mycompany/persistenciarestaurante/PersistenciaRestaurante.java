@@ -29,7 +29,7 @@ public class PersistenciaRestaurante {
         
         //Registrar un cliente y un producto
         
-        Producto p = new Producto("Sandwich", 200L, TipoProducto.platillo);
+        Producto p = new Producto("Sandwich", 200.00, TipoProducto.platillo);
         //Cliente c = new Cliente("Alex Adrian", "Nieblas", "Moreno", "6442253326", "alex@gmail.com", TipoCliente.frecuente);
         
         //buscar producto

@@ -30,7 +30,7 @@ public class Producto implements Serializable {
     private String nombre;
 
     @Column(name = "precio", nullable = false)
-    private Long precio;
+    private Double precio;
 
     @Column(name = "tipoProducto", nullable = false)
     @Enumerated(value = EnumType.STRING)
@@ -46,13 +46,13 @@ public class Producto implements Serializable {
 
     }
 
-    public Producto(String nombre, Long precio, TipoProducto tipoProducto) {
+    public Producto(String nombre, Double precio, TipoProducto tipoProducto) {
         this.nombre = nombre;
         this.precio = precio;
         this.tipoProducto = tipoProducto;
     }
 
-    public Producto(Long id, String nombre, Long precio, TipoProducto tipoProducto) {
+    public Producto(Long id, String nombre, Double precio, TipoProducto tipoProducto) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
@@ -75,11 +75,11 @@ public class Producto implements Serializable {
         this.nombre = nombre;
     }
 
-    public Long getPrecio() {
+    public Double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(Long precio) {
+    public void setPrecio(Double precio) {
         this.precio = precio;
     }
 

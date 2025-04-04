@@ -15,14 +15,14 @@ import java.util.ArrayList;
 public class ProductoDTO {
     
     private String nombre;
-    private Long precio;
+    private Double precio;
     private TipoProducto tipoProducto;
     private ArrayList<IngredientesProductos> ingredientesProducto;
 
     public ProductoDTO() {
     }
 
-    public ProductoDTO(String nombre, Long precio, TipoProducto tipoProducto, ArrayList<IngredientesProductos> ingredientesProducto) {
+    public ProductoDTO(String nombre, Double precio, TipoProducto tipoProducto, ArrayList<IngredientesProductos> ingredientesProducto) {
         this.nombre = nombre;
         this.precio = precio;
         this.tipoProducto = tipoProducto;
@@ -46,11 +46,11 @@ public class ProductoDTO {
         this.nombre = nombre;
     }
 
-    public Long getPrecio() {
+    public Double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(Long precio) {
+    public void setPrecio(Double precio) {
         this.precio = precio;
     }
 

@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * @author Jesús Osuna 240549
@@ -29,10 +30,10 @@ public class DetalleComanda implements Serializable {
     private String notas;
     
     @Column (name = "precioUnitario", nullable = false)
-    private Long precioUnitario;
+    private Double precioUnitario;
     
-    @Column (name = "importeTotal")
-    private Long importeTotal;
+    @Transient
+    private Double importeTotal;
     
     @ManyToOne 
     @JoinColumn(name = "id_producto", nullable = false)
@@ -46,21 +47,19 @@ public class DetalleComanda implements Serializable {
         
     }
 
-    public DetalleComanda(Integer cantidad, String notas, Long precioUnitario, Long importeTotal, Producto producto, Comanda comanda) {
+    public DetalleComanda(Integer cantidad, String notas, Double precioUnitario, Producto producto, Comanda comanda) {
         this.cantidad = cantidad;
         this.notas = notas;
         this.precioUnitario = precioUnitario;
-        this.importeTotal = importeTotal;
         this.producto = producto;
         this.comanda = comanda;
     }
 
-    public DetalleComanda(Long id, Integer cantidad, String notas, Long precioUnitario, Long importeTotal, Producto producto, Comanda comanda) {
+    public DetalleComanda(Long id, Integer cantidad, String notas, Double precioUnitario, Producto producto, Comanda comanda) {
         this.id = id;
         this.cantidad = cantidad;
         this.notas = notas;
         this.precioUnitario = precioUnitario;
-        this.importeTotal = importeTotal;
         this.producto = producto;
         this.comanda = comanda;
     }
@@ -89,20 +88,16 @@ public class DetalleComanda implements Serializable {
         this.notas = notas;
     }
 
-    public Long getPrecioUnitario() {
+    public Double getPrecioUnitario() {
         return precioUnitario;
     }
 
-    public void setPrecioUnitario(Long precioUnitario) {
+    public void setPrecioUnitario(Double precioUnitario) {
         this.precioUnitario = precioUnitario;
     }
 
-    public Long getImporteTotal() {
+    public Double getImporteTotal() {
         return importeTotal;
-    }
-
-    public void setImporteTotal(Long importeTotal) {
-        this.importeTotal = importeTotal;
     }
 
     public Producto getProducto() {

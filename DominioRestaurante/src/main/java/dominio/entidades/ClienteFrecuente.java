@@ -15,7 +15,7 @@ import javax.persistence.Transient;
 public class ClienteFrecuente extends Cliente implements Serializable {
 
     @Transient
-    private Long totalGastado;
+    private Double totalGastado;
 
     @Transient
     private Integer cantidadVisitas;
@@ -34,7 +34,7 @@ public class ClienteFrecuente extends Cliente implements Serializable {
         super(id, nombre, apellidoPaterno, apellidoMaterno, telefono, correoElectronico, tipo);
     }
 
-    public Long getTotalGastado() {
+    public Double getTotalGastado() {
         return totalGastado;
     }
 
